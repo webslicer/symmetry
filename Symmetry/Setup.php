@@ -40,8 +40,8 @@ class Setup {
     public static function init($config){
         if (!defined('SYMMETRY_ROOT')) {
             define('SYMMETRY_ROOT', __DIR__ . DIRECTORY_SEPARATOR);
+            require(SYMMETRY_ROOT . 'Psr4Autoloader.php');
         }
-        require(SYMMETRY_ROOT . 'Psr4Autoloader.php');
         $loader = new Psr4Autoloader();
         $loader->addNamespace('Symmetry', SYMMETRY_ROOT);
         $loader->register();
