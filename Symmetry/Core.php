@@ -158,7 +158,7 @@ class Core {
      * @param \Symmetry\Request $request
      * @return \Symmetry\Response
      */
-    public function preProcessRequest($request){
+    public function preProcessRequest(&$request){
         foreach($this->pluginStack as $plugin){
             $plugin->classEntry($request, $this);
         }
